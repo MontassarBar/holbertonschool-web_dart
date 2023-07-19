@@ -1,10 +1,21 @@
 String longestUniqueSubstring(String str) {
-    List<String> l = [];
-    for (var x = 0; x < str.length; x++){
-      while (l.contains(str[x])){
-        l.remove(l.first);
+  String searchSubstr = ''; 
+  String longestSubstring = ''; 
+
+  for (int i = 0; i < str.length; i++) 
+  { 
+    int index = searchSubstr.indexOf(str[i]); 
+    
+    if (index == -1)
+    { 
+      searchSubstr += str[i];
+      //print('str: $searchSubstr'); 
+      if (searchSubstr.length > longestSubstring.length) {
+        longestSubstring = searchSubstr; 
       }
-      l.add(str[x]);
-    }
-  return l.join();
+    } else { 
+      searchSubstr = searchSubstr.substring(index + 1) + str[i];
+        }
+  }
+  return longestSubstring; 
 }
