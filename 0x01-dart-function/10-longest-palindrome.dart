@@ -23,6 +23,6 @@ String longestPalindrome(String s){
             left--;
         }
     }
-    if (s.substring(leftIndex, rightIndex + 1).length > 1) return s.substring(leftIndex, rightIndex + 1);
+    if (s.substring(leftIndex, rightIndex + 1).length > 2) return s.substring(leftIndex, rightIndex + 1);
     return 'none';
 }
