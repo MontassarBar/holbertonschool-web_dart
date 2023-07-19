@@ -1,10 +1,12 @@
 String longestUniqueSubstring(String str) {
-    Set<String> l = {};
+    String s = '';
     for (var x = 0; x < str.length; x++){
-      while (l.contains(str[x])){
-        l.remove(l.first);
+      if (s.contains(str[x])){
+        s = s.substring(s.indexOf(str[x]) + 1) + str[x];
       }
-      l.add(str[x]);
+      else {
+        s += str[x];
+      }
     }
-  return l.join();
+  return s;
 }
