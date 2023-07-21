@@ -1,3 +1,4 @@
+import '6-password.dart';
 class User extends Password {
   String name = '';
   int age = 0;
