@@ -1,3 +1,4 @@
 Future<void> usersCount() async {
-  print(await fetchUsersCount());
+  var count = await fetchUsersCount();
+  print(count);
 }
